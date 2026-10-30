@@ -1,0 +1,13 @@
+{
+  "app": "Discovery & Jebel Ali Pedal",
+  "version": "1.0.0",
+  "theme": {
+    "asphalt": "#12151A",
+    "amber": "#F59E0B",
+    "metroRed": "#C8102E",
+    "gold": "#D4A017",
+    "emerald": "#10B981"
+  },
+  "emergency": { "police": "999", "ambulance": "998", "rta": "8009090" },
+  "categories": ["dg", "ja", "legal", "summer", "mech", "night"]
+}
