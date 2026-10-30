@@ -1,0 +1,12 @@
+{
+  "name": "dubai-cycling-manual",
+  "version": "1.0.0",
+  "description": "Offline-first PWA cycling manual for Discovery Gardens, Jebel Ali and JAFZA, Dubai.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node tests/tips.test.js",
+    "build": "python3 config/build.py"
+  }
+}

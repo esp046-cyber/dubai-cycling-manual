@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12151A">
+  <title>Offline | Dubai Pedal</title>
+  <style>
+    :root { color-scheme: dark light; }
+    body { margin: 0; padding: calc(20px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom)); background: #12151A; color: #F3F4F6; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 1.6rem; margin: 0 0 6px; }
+    h1::after { content: ""; display: block; width: 70px; height: 5px; border-radius: 3px; margin-top: 10px; background: linear-gradient(90deg, #C8102E, #D4A017, #F59E0B); }
+    p { color: #A3ABB8; }
+    .sos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
+    .sos a { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 76px; border-radius: 14px; color: #fff; text-decoration: none; font-size: 0.78rem; }
+    .sos strong { font-size: 1.2rem; }
+    .r { background: #C8102E; } .a { background: #B45309; } .g { background: #8A6A0A; }
+    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-left: 5px solid #F59E0B; border-radius: 16px; padding: 12px 14px; margin: 10px 0; }
+    .card h2 { font-size: 1rem; margin: 0 0 4px; }
+    .card p { margin: 0; }
+    .btn { display: inline-block; margin-top: 14px; min-height: 48px; padding: 12px 20px; border-radius: 14px; background: #F59E0B; color: #12151A; font-weight: 700; text-decoration: none; border: 0; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>You are offline</h1>
+    <p>The full manual opens from cache once it has loaded online one time. Essential emergency guidance is below.</p>
+
+    <div class="sos">
+      <a class="r" href="tel:999"><strong>999</strong>Dubai Police</a>
+      <a class="a" href="tel:998"><strong>998</strong>Ambulance</a>
+      <a class="g" href="tel:8009090"><strong>800 9090</strong>RTA</a>
+    </div>
+
+    <div class="card"><h2>Heat illness</h2><p>Stop, move to shade, sip water with electrolytes, cool neck and head. Confusion or collapse is an emergency: call 998.</p></div>
+    <div class="card"><h2>Crash</h2><p>Get out of traffic if you can, check for injuries, call 999 or 998, and do not move someone with possible neck or back injury unless there is danger.</p></div>
+    <div class="card"><h2>Puncture</h2><p>Repair in shade, not on hot asphalt. Check the tyre for thorns or glass before fitting the new tube.</p></div>
+    <div class="card"><h2>Night riding</h2><p>Use a strong front light and a red rear light, wear reflective gear, slow down, and avoid unlit isolated roads.</p></div>
+    <div class="card"><h2>Trucks near JAFZA</h2><p>Never ride beside a turning truck. Stay behind, where the driver can see you, and wait for it to clear junctions.</p></div>
+    <div class="card"><h2>Sand and dust</h2><p>Avoid braking hard on sand-covered edges. Slow down, protect eyes and mouth, and skip rides on very dusty, windy days.</p></div>
+
+    <a class="btn" href="./index.html">Try opening the manual</a>
+  </main>
+</body>
+</html>

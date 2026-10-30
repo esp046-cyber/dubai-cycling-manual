@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Discovery &amp; Jebel Ali Pedal: Urban &amp; Industrial Dubai Cycling Manual</title>
+  <meta name="description" content="Offline-first cycling manual for Discovery Gardens, Jebel Ali Village, Festival Plaza and JAFZA in Dubai: 140+ tips, a ride-ready checklist, SOS dial buttons and route coordinates.">
+  <meta name="theme-color" content="#12151A">
+  <meta name="color-scheme" content="dark light">
+
+  <!-- iOS standalone PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dubai Pedal">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="msapplication-config" content="browserconfig.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Discovery &amp; Jebel Ali Pedal: Dubai Cycling Manual">
+  <meta property="og:description" content="Offline cycling tips for Discovery Gardens, Jebel Ali Village, Festival Plaza and JAFZA. Ride-ready checklist, SOS buttons, route coordinates.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_AE">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Discovery &amp; Jebel Ali Pedal: Dubai Cycling Manual">
+  <meta name="twitter:description" content="Offline cycling tips for Discovery Gardens, Jebel Ali Village, Festival Plaza and JAFZA.">
+  <meta name="twitter:image" content="assets/og-image.png">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#tips">Skip to tips</a>
+
+  <header class="hero">
+    <div class="hero-top">
+      <span class="badge" id="netStatus" role="status" aria-live="polite">Checking…</span>
+      <span class="badge badge-gold" id="tipCounter" aria-live="polite">0 tips</span>
+    </div>
+    <h1>Discovery &amp; Jebel Ali Pedal</h1>
+    <p class="subtitle">The Definitive Urban &amp; Industrial Dubai Cycling Manual</p>
+    <p class="disclaimer">Guidance only. Rules and roads change: confirm with the RTA and Dubai Police.</p>
+  </header>
+
+  <main>
+    <!-- SOS -->
+    <section class="panel" aria-labelledby="sosTitle">
+      <h2 id="sosTitle">Emergency SOS</h2>
+      <div class="sos-grid">
+        <a class="sos sos-red" href="tel:999"><strong>999</strong><span>Dubai Police</span></a>
+        <a class="sos sos-amber" href="tel:998"><strong>998</strong><span>Ambulance</span></a>
+        <a class="sos sos-gold" href="tel:8009090"><strong>800 9090</strong><span>RTA Toll-free</span></a>
+      </div>
+    </section>
+
+    <!-- Search + filters -->
+    <section class="panel sticky" aria-labelledby="catalogTitle">
+      <h2 id="catalogTitle">Tip Catalog</h2>
+      <label class="search">
+        <span class="sr-only">Search tips</span>
+        <input id="search" type="search" inputmode="search" placeholder="Search tips (e.g. sand, helmet, E11)" autocomplete="off" enterkeyhint="search">
+      </label>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Tip categories"></div>
+    </section>
+
+    <section id="tips" class="cards" aria-live="polite"></section>
+    <p id="empty" class="empty" hidden>No tips match. Try a different word or category.</p>
+
+    <!-- Checklist -->
+    <section class="panel" id="checklistPanel" aria-labelledby="clTitle">
+      <div class="row">
+        <h2 id="clTitle">Ride Ready Checklist</h2>
+        <span class="badge badge-green" id="clProgress">0/0</span>
+      </div>
+      <div class="bar"><div class="bar-fill" id="clBar"></div></div>
+      <ul class="checklist" id="checklist"></ul>
+      <button class="btn btn-ghost" id="clReset" type="button">Reset checklist</button>
+    </section>
+
+    <!-- Coordinates & GPX -->
+    <section class="panel" aria-labelledby="coTitle">
+      <h2 id="coTitle">Coordinates &amp; GPX</h2>
+      <p class="note">Approximate area centres only. Confirm every point in your maps app before riding.</p>
+      <ul class="coords" id="coords"></ul>
+      <h3>GPX route tips</h3>
+      <ul class="coords" id="gpxTips"></ul>
+      <button class="btn" id="copyGpx" type="button">Copy starter GPX file</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Works offline once loaded. Add to Home Screen from Safari: Share, then Add to Home Screen.</p>
+    <p>MIT licensed. Ride safe, hydrate, be seen.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <noscript><p class="empty">JavaScript is required for the interactive catalog. Emergency numbers: 999 Police, 998 Ambulance, 800 9090 RTA.</p></noscript>
+
+  <script src="assets/tips-data.js"></script>
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("service-worker.js").catch(function (e) {
+          console.warn("Service worker registration failed:", e);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
